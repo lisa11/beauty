@@ -5,4 +5,6 @@ class Product < ApplicationRecord
 
   # Validations
 
+  validates :shelf_life, :numericality => { :greater_than => 0 }
+
 end
