@@ -137,11 +137,6 @@
       <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
     </div>
 
-<div class="form-group">
-      <%= f.label :product_brand_cont, "Product brand contains" %>
-      <%= f.text_field :product_brand_cont, :class => "form-control", :placeholder => "Product brand contains" %>
-    </div>
-
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
       <a href="/purchases" class="btn btn-default btn-block mb-1">Clear filters</a>
@@ -171,7 +166,7 @@
         <td>
           <% if purchase.product.present? %>
             <a href="/products/<%= purchase.product.id %>">
-              <%= purchase.product.brand %>
+              <%= purchase.product.brand_id %>
             </a>
           <% end %>
         </td>

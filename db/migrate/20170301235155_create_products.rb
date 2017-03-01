@@ -1,7 +1,7 @@
 class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
-      t.string :brand
+      t.integer :brand_id
       t.integer :shelf_life
       t.string :skin_type
       t.boolean :skincare
