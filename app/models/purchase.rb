@@ -5,4 +5,6 @@ class Purchase < ApplicationRecord
 
   # Validations
 
+  validates :estimated_number_of_uses, :numericality => { :greater_than => 0 }
+
 end
