@@ -99,7 +99,7 @@
       <% @user.products.each do |product| %>
         <li class="list-group-item">
           <a href="/products/<%= product.id %>">
-            <%= product.brand %>
+            <%= product.brand_id %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
             <a href="/products/<%= product.id %>" class="btn btn-primary">

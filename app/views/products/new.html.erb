@@ -18,13 +18,13 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for brand -->
+      <!-- Label and input for brand_id -->
       <div class="form-group">
-        <label for="brand" class="control-label">
+        <label for="brand_id" class="control-label">
           Brand
         </label>
 
-        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @product.brand %>">
+        <%= select_tag(:brand_id, options_from_collection_for_select(Brand.all, :id, :created_at, @product.brand_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for shelf_life -->

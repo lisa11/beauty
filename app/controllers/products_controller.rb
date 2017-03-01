@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @q = Product.ransack(params[:q])
-    @products = @q.result(:distinct => true).includes(:purchases, :users).page(params[:page]).per(10)
+    @products = @q.result(:distinct => true).includes(:purchases, :brand, :users).page(params[:page]).per(10)
 
     render("products/index.html.erb")
   end
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new
 
-    @product.brand = params[:brand]
+    @product.brand_id = params[:brand_id]
     @product.shelf_life = params[:shelf_life]
     @product.skin_type = params[:skin_type]
     @product.skincare = params[:skincare]
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    @product.brand = params[:brand]
+    @product.brand_id = params[:brand_id]
     @product.shelf_life = params[:shelf_life]
     @product.skin_type = params[:skin_type]
     @product.skincare = params[:skincare]

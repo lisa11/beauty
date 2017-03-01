@@ -2,6 +2,23 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root :to => "products#index"
+  # Routes for the Brand resource:
+  # CREATE
+  get "/brands/new", :controller => "brands", :action => "new"
+  post "/create_brand", :controller => "brands", :action => "create"
+
+  # READ
+  get "/brands", :controller => "brands", :action => "index"
+  get "/brands/:id", :controller => "brands", :action => "show"
+
+  # UPDATE
+  get "/brands/:id/edit", :controller => "brands", :action => "edit"
+  post "/update_brand/:id", :controller => "brands", :action => "update"
+
+  # DELETE
+  get "/delete_brand/:id", :controller => "brands", :action => "destroy"
+  #------------------------------
+
   # Routes for the Use resource:
   # CREATE
   get "/uses/new", :controller => "uses", :action => "new"
