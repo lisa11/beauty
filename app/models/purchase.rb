@@ -1,6 +1,9 @@
 class Purchase < ApplicationRecord
   # Direct associations
 
+  has_many   :uses,
+             :dependent => :destroy
+
   belongs_to :product,
              :counter_cache => true
 
